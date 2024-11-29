@@ -1,0 +1,234 @@
+/* Reseta margens e padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Estilos Globais */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 40px;
+    background-color: #f9f9f9;
+    color: #333;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+/* Tema Escuro */
+.dark-theme {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+
+/* Título */
+h1 {
+    font-size: 2.2em;
+    color: #444;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+/* Contêiner para centralizar input e botão */
+.task-input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+
+/* Input e Botões */
+input[type="text"] {
+    width: 100%;
+    max-width: 300px;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+
+input[type="text"]:focus {
+    border-color: #007bff;
+}
+
+
+button {
+    padding: 12px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    outline: none;
+    margin: 2px;
+}
+
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+
+button:active {
+    transform: translateY(0);
+}
+
+
+/* Botão de Adicionar Tarefa */
+button[onclick="addTask()"] {
+    background-color: #28a745;
+    color: #fff;
+}
+
+
+button[onclick="addTask()"]:hover {
+    background-color: #218838;
+}
+
+
+/* Botão de Alternar Tema */
+.theme-toggle button {
+    background-color: #007bff;
+    color: #fff;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+
+.theme-toggle button:hover {
+    background-color: #0056b3;
+}
+
+
+/* Estilos da Lista de Tarefas */
+ul {
+    list-style-type: none;
+    padding: 0;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+
+li {
+    margin: 10px 0;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+
+.dark-theme li {
+    background-color: #2a2a2a;
+}
+
+
+/* Estilo de Tarefas Completadas */
+li span {
+    flex: 1;
+    font-size: 1em;
+}
+
+
+li span.completed {
+    text-decoration: line-through;
+    color: #6c757d;
+}
+
+
+/* Botão de Concluir Tarefa */
+li button[onclick^="toggleCompletion"] {
+    background-color: #ffc107;
+    color: #333;
+}
+
+
+li button[onclick^="toggleCompletion"]:hover {
+    background-color: #e0a800;
+}
+
+
+/* Botão de Editar Tarefa */
+li button[onclick^="editTask"] {
+    background-color: #007bff;
+    color: #fff;
+}
+
+
+li button[onclick^="editTask"]:hover {
+    background-color: #0056b3;
+}
+
+
+/* Botão de Excluir Tarefa */
+li button[onclick^="deleteTask"] {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+
+li button[onclick^="deleteTask"]:hover {
+    background-color: #c82333;
+}
+
+
+/* Modo Responsivo */
+@media (max-width: 600px) {
+    body {
+        margin: 20px;
+    }
+
+
+    .task-input-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+
+    .theme-toggle button {
+        width: 85%; /* O botão ocupa toda a largura disponível */
+    }
+
+
+    input[type="text"] {
+        width: 100%;
+    }
+
+
+    button[onclick="addTask()"] {
+        width: 85%; /* Tornar o botão "Adicionar Tarefa" mais largo em telas pequenas */
+    }
+
+
+    ul {
+        max-width: 100%;
+    }
+
+
+    /* Estilos dos botões em telas pequenas */
+    li button {
+        padding: 10px;
+        font-size: 0.7em; /* Tamanho da fonte menor para telas pequenas */
+        width: 20%; /* Botões mais estreitos */
+        margin: 2px;
+    }
+
+
+    li {
+        flex-direction:row ;
+    }
+}
+
